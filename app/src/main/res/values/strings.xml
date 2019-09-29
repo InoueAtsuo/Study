@@ -1,3 +1,11 @@
 <resources>
+    <!-- アプリ名 -->
     <string name="app_name">Study</string>
+
+    <!-- 共通 -->
+    <string name="button_return">Return</string>
+
+    <!-- メイン -->
+    <string name="move_connection">Connection</string>
+
 </resources>
