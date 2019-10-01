@@ -8,4 +8,5 @@
     <!-- メイン -->
     <string name="move_connection">Connection</string>
     <string name="move_loading">Loading</string>
+    <string name="title_activity_parent">ParentActivity</string>
 </resources>

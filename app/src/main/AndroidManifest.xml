@@ -11,12 +11,10 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Presentation.Loading.LoadingActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".Presentation.Connection.ConnectionActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".Presentation.Main.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

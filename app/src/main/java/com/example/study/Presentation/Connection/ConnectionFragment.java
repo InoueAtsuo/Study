@@ -7,14 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.study.Presentation.Common.ParentFragment;
 import com.example.study.R;
 
-import androidx.fragment.app.Fragment;
-
-public class ConnectionFragment extends Fragment {
+public class ConnectionFragment extends ParentFragment {
 
     public interface ConnectionFragmentListener {
-        void onCickReturn();
+
     };
 
     private ConnectionFragmentListener mListener = null;
@@ -56,7 +55,7 @@ public class ConnectionFragment extends Fragment {
         buttonReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onCickReturn();
+                mParentListener.onClickReturn();
             }
         });
     }

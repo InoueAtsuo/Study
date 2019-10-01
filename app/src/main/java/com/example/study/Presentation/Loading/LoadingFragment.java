@@ -4,19 +4,18 @@ package com.example.study.Presentation.Loading;
 import android.content.Context;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.study.Presentation.Common.ParentFragment;
 import com.example.study.R;
 
-public class LoadingFragment extends Fragment {
+public class LoadingFragment extends ParentFragment {
 
     public interface LoadingFragmentListener {
-        void onCickReturn();
+
     };
 
     private LoadingFragmentListener mListener = null;
@@ -58,7 +57,7 @@ public class LoadingFragment extends Fragment {
         buttonReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onCickReturn();
+                mParentListener.onClickReturn();
             }
         });
     }
