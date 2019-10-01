@@ -34,8 +34,6 @@ public class LoadingFragment extends ParentFragment {
         mListener = null;
     }
 
-    private Button buttonReturn;
-
     public static LoadingFragment newInstance() {
         return new LoadingFragment();
     }
@@ -53,12 +51,6 @@ public class LoadingFragment extends ParentFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        buttonReturn = view.findViewById(R.id.button_return);
-        buttonReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mParentListener.onClickReturn();
-            }
-        });
+
     }
 }

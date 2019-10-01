@@ -32,8 +32,6 @@ public class ConnectionFragment extends ParentFragment {
         mListener = null;
     }
 
-    private Button buttonReturn;
-
     public static ConnectionFragment newInstance() {
         return new ConnectionFragment();
     }
@@ -51,12 +49,6 @@ public class ConnectionFragment extends ParentFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        buttonReturn = view.findViewById(R.id.button_return);
-        buttonReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mParentListener.onClickReturn();
-            }
-        });
+
     }
 }

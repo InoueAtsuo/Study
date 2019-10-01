@@ -16,5 +16,7 @@ public class LoadingActivity extends ParentActivity implements LoadingFragment.L
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.commit();
+
+        super.setButtonReturnView();
     }
 }
