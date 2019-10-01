@@ -15,7 +15,8 @@ import com.example.study.R;
 public class MainFragment extends Fragment {
 
     public interface MainFragmentListener {
-        public void onCickConnection();
+        void onClickConnection();
+        void onClickLoading();
     };
 
     private MainFragmentListener mListener;
@@ -34,6 +35,7 @@ public class MainFragment extends Fragment {
     }
 
     private Button moveConnection;
+    private Button moveLoading;
 
     public static MainFragment newInstance() {
         return new MainFragment();
@@ -54,10 +56,19 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         moveConnection = view.findViewById(R.id.move_connection);
+        moveLoading = view.findViewById(R.id.move_loading);
+
         moveConnection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onCickConnection();
+                mListener.onClickConnection();
+            }
+        });
+
+        moveLoading.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onClickLoading();
             }
         });
     }

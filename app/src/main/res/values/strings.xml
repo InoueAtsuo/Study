@@ -7,5 +7,5 @@
 
     <!-- メイン -->
     <string name="move_connection">Connection</string>
-
+    <string name="move_loading">Loading</string>
 </resources>
