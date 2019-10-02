@@ -1,5 +1,6 @@
 package com.example.study.Presentation.Common;
 
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,5 +31,14 @@ public class ParentActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // 戻るボタンをクリック時
+        if(keyCode == KeyEvent.KEYCODE_BACK) {
+
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
