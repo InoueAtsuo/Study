@@ -5,12 +5,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include
+        android:id="@+id/connection_header"
+        layout="@layout/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
     <fragment
         android:id="@+id/connection_fragment"
         android:name="com.example.study.Presentation.Connection.ConnectionFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/connection_header"
         android:layout_alignTop="@+id/connection_footer" />
 
     <include

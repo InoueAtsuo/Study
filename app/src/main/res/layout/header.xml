@@ -5,10 +5,9 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/return_button"
+    <TextView
+        android:id="@+id/header_text"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="@string/return_button">
-    </Button>
+        android:layout_width="wrap_content">
+    </TextView>
 </LinearLayout>

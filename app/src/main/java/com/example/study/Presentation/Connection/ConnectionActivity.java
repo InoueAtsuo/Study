@@ -17,6 +17,7 @@ public class ConnectionActivity extends ParentActivity implements ConnectionFrag
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.commit();
 
+        super.setHeaderTextView(R.string.explanation_connection);
         super.setButtonReturnView();
     }
 }
