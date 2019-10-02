@@ -21,24 +21,17 @@ public class ParentActivity extends AppCompatActivity {
         }
     }
 
+    // 戻るボタン押下事
     protected void setButtonReturnView() {
         returnButton = findViewById(R.id.return_button);
         if (returnButton != null) {
             returnButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
+                    // fininshで画面を閉じる
                     finish();
                 }
             });
         }
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        // 戻るボタンをクリック時
-        if(keyCode == KeyEvent.KEYCODE_BACK) {
-
-        }
-        return super.onKeyDown(keyCode, event);
     }
 }

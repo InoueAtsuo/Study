@@ -17,8 +17,8 @@
         android:name="com.example.study.Presentation.Connection.ConnectionFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/connection_header"
-        android:layout_alignTop="@+id/connection_footer" />
+        android:layout_below="@+id/connection_header"
+        android:layout_above="@+id/connection_footer" />
 
     <include
         android:id="@+id/connection_footer"

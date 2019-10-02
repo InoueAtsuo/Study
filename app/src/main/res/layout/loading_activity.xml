@@ -17,8 +17,8 @@
         android:name="com.example.study.Presentation.Loading.LoadingFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/loading_header"
-        android:layout_alignTop="@+id/loading_footer" />
+        android:layout_below="@+id/loading_header"
+        android:layout_above="@+id/loading_footer" />
 
     <include
         android:id="@+id/loading_footer"
