@@ -1,0 +1,18 @@
+<resources>
+    <!-- アプリ名 -->
+    <string name="app_name">Study</string>
+
+    <!-- 共通 -->
+    <string name="return_button">Return</string>
+
+    <!-- メイン -->
+    <string name="move_connection">Http Request</string>
+    <string name="move_loading">Loading</string>
+
+    <!-- Connection -->
+    <string name="explanation_connection">Send Http Request</string>
+
+    <!-- Loading -->
+    <string name="explanation_loading">Show Loading</string>
+
+</resources>
