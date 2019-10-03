@@ -18,15 +18,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/search_word" />
+                android:text="@string/zip_code" />
 
             <EditText
-                android:id="@+id/search_word"
-                android:layout_width="match_parent"
+                android:id="@+id/zip_code1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/zip_code2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
         <Button
+            android:id="@+id/search_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/search_button" />

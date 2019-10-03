@@ -11,7 +11,7 @@
 
     <!-- Connection -->
     <string name="explanation_connection">Send Http Request</string>
-    <string name="search_word">Search Word</string>
+    <string name="zip_code">Zip Code</string>
     <string name="search_button">Search</string>
     <string name="search_result">Search Result</string>
 
