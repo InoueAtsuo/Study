@@ -6,8 +6,10 @@
     <string name="return_button">戻る</string>
 
     <!-- メイン -->
+    <string name="move_bottom_sheet">ボトムシート</string>
     <string name="move_connection">Http リクエスト</string>
     <string name="move_loading">ロード中表示</string>
+    <string name="move_text">テキスト表示</string>
 
     <!-- Connection -->
     <string name="explanation_connection">Http リクエスト送信</string>
@@ -17,5 +19,11 @@
 
     <!-- Loading -->
     <string name="explanation_loading">Loading 表示</string>
+
+    <!-- Text -->
+    <string name="explanation_text">Text 表示</string>
+    <plurals name="plural_book">
+        <item quantity="other">%d冊</item>
+    </plurals>
 
 </resources>

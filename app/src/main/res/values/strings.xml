@@ -6,8 +6,10 @@
     <string name="return_button">Return</string>
 
     <!-- メイン -->
+    <string name="move_bottom_sheet">Bottom Sheet</string>
     <string name="move_connection">Http Request</string>
     <string name="move_loading">Loading</string>
+    <string name="move_text">Text</string>
 
     <!-- Connection -->
     <string name="explanation_connection">Send Http Request</string>
@@ -17,5 +19,12 @@
 
     <!-- Loading -->
     <string name="explanation_loading">Show Loading</string>
+
+    <!-- Text -->
+    <string name="explanation_text">Show Text</string>
+    <plurals name="plural_book">
+        <item quantity="one">%d book</item>
+        <item quantity="other">%d books</item>
+    </plurals>
 
 </resources>
