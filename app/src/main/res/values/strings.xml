@@ -26,5 +26,7 @@
         <item quantity="one">%d book</item>
         <item quantity="other">%d books</item>
     </plurals>
+    <string name="text_color_1">textColor1</string>
+    <string name="text_color_2">textColor2</string>
 
 </resources>

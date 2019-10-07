@@ -25,5 +25,7 @@
     <plurals name="plural_book">
         <item quantity="other">%d冊</item>
     </plurals>
+    <string name="text_color_1">textColor1</string>
+    <string name="text_color_2">textColor2</string>
 
 </resources>

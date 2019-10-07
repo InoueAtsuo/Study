@@ -1,11 +1,12 @@
 package com.example.study.Presentation.Text;
 
 import android.content.Context;
-import android.net.Uri;
+import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-
+import android.text.Html;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,8 @@ public class TextFragment extends ParentFragment {
     private TextView bookZero;
     private TextView bookOne;
     private TextView bookOther;
+    private TextView textColor1;
+    private TextView textColor2;
 
     @Override
     public void onAttach(Context context) {
@@ -59,9 +62,22 @@ public class TextFragment extends ParentFragment {
         bookZero = view.findViewById(R.id.book_zero);
         bookOne = view.findViewById(R.id.book_one);
         bookOther = view.findViewById(R.id.book_other);
+        textColor1 = view.findViewById(R.id.text_color_1);
+        textColor2 = view.findViewById(R.id.text_color_2);
 
         bookZero.setText(getResources().getQuantityString(R.plurals.plural_book, 0, 0));
         bookOne.setText(getResources().getQuantityString(R.plurals.plural_book, 1, 1));
         bookOther.setText(getResources().getQuantityString(R.plurals.plural_book, 2,2));
+
+        // textの一部をHTML表示で文字色変換
+        String text1 = getResources().getString(R.string.text_color_1);
+        text1 = text1.replace("Color", "<font color=\"red\">"+"Color"+"</font>");
+        textColor1.setText(Html.fromHtml(text1));
+
+        // textの一部をSpannableStringBuilderで文字色変換
+        String text2 = getResources().getString(R.string.text_color_2);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text2);
+        spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.RED), 4, 9, 0);
+        textColor2.setText(spannableStringBuilder.subSequence(0, spannableStringBuilder.length()));
     }
 }
