@@ -32,4 +32,23 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true" />
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        app:behavior_peekHeight="200dp"
+        app:behavior_hideable="false" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:text="BottomSheet"
+            android:textSize="30sp"
+            />
+    </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
