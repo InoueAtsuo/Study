@@ -36,6 +36,7 @@ public class MainFragment extends Fragment {
         mListener = null;
     }
 
+    private Button moveBottomSheet;
     private Button moveConnection;
     private Button moveLoading;
     private Button moveText;
@@ -58,9 +59,17 @@ public class MainFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        moveBottomSheet = view.findViewById(R.id.move_bottom_sheet);
         moveConnection = view.findViewById(R.id.move_connection);
         moveLoading = view.findViewById(R.id.move_loading);
         moveText = view.findViewById(R.id.move_text);
+
+        moveBottomSheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onClickBottomSheet();
+            }
+        });
 
         moveConnection.setOnClickListener(new View.OnClickListener() {
             @Override

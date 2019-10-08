@@ -11,6 +11,10 @@
     <string name="move_loading">Loading</string>
     <string name="move_text">Text</string>
 
+    <!-- BottomSheet -->
+    <string name="explanation_bottom_sheet">Show Bottom Sheet</string>
+    <string name="show_bottom_sheet_button">Show Bottom Sheet</string>
+
     <!-- Connection -->
     <string name="explanation_connection">Send Http Request</string>
     <string name="zip_code">Zip Code</string>

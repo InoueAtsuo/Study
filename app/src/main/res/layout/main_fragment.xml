@@ -6,6 +6,13 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/move_bottom_sheet"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/move_bottom_sheet">
+    </Button>
+
+    <Button
         android:id="@+id/move_connection"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"

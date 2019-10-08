@@ -75,6 +75,7 @@ public class TextFragment extends ParentFragment {
         textColor1.setText(Html.fromHtml(text1));
 
         // textの一部をSpannableStringBuilderで文字色変換
+        //  この方法は文字色だけでなく、文字の大きさなどスタイルを自由に設定可能です。
         String text2 = getResources().getString(R.string.text_color_2);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text2);
         spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.RED), 4, 9, 0);

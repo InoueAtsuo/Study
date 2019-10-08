@@ -11,6 +11,10 @@
     <string name="move_loading">ロード中表示</string>
     <string name="move_text">テキスト表示</string>
 
+    <!-- BottomSheet -->
+    <string name="explanation_bottom_sheet">Bottom Sheet 表示</string>
+    <string name="show_bottom_sheet_button">Bottom Sheet 表示</string>
+
     <!-- Connection -->
     <string name="explanation_connection">Http リクエスト送信</string>
     <string name="zip_code">郵便番号</string>

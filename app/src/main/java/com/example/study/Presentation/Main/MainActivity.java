@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.study.Presentation.BottomSheet.BottomSheetActivity;
 import com.example.study.Presentation.Connection.ConnectionActivity;
 import com.example.study.Presentation.Loading.LoadingActivity;
 import com.example.study.Presentation.Text.TextActivity;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Main
 
     @Override
     public void onClickBottomSheet() {
+        Intent intent = new Intent(MainActivity.this, BottomSheetActivity.class);
+        startActivity(intent);
     }
 
     @Override
