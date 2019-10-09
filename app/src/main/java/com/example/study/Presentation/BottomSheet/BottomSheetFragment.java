@@ -17,10 +17,12 @@ public class BottomSheetFragment extends ParentFragment {
 
     public interface BottomSheetFragmentFragmentListener {
         void showBottomSheet();
+        void hideBottomSheet();
     };
 
     private BottomSheetFragmentFragmentListener mListener = null;
-    private Button showBottomSheet_button;
+    private Button showBottomSheetButton;
+    private Button hideBottomSheetButton;
 
     @Override
     public void onAttach(Context context) {
@@ -52,11 +54,20 @@ public class BottomSheetFragment extends ParentFragment {
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        showBottomSheet_button = view.findViewById(R.id.show_bottom_sheet_button);
-        showBottomSheet_button.setOnClickListener(new View.OnClickListener() {
+        showBottomSheetButton = view.findViewById(R.id.show_bottom_sheet_button);
+        hideBottomSheetButton = view.findViewById(R.id.hide_bottom_sheet_button);
+
+        showBottomSheetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mListener.showBottomSheet();
+            }
+        });
+
+        hideBottomSheetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.hideBottomSheet();
             }
         });
     }
