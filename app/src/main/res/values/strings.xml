@@ -10,6 +10,7 @@
     <string name="move_connection">Http Request</string>
     <string name="move_loading">Loading</string>
     <string name="move_text">Text</string>
+    <string name="move_recycle">Recycle</string>
 
     <!-- BottomSheet -->
     <string name="explanation_bottom_sheet">Show Bottom Sheet</string>
@@ -34,4 +35,7 @@
     </plurals>
     <string name="text_color_1">textColor1</string>
     <string name="text_color_2">textColor2</string>
+
+    <!-- Recycle -->
+    <string name="explanation_recycle">Recyle View</string>
 </resources>

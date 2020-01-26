@@ -10,6 +10,7 @@
     <string name="move_connection">Http リクエスト</string>
     <string name="move_loading">ロード中表示</string>
     <string name="move_text">テキスト表示</string>
+    <string name="move_recycle">リサイクルビュー</string>
 
     <!-- BottomSheet -->
     <string name="explanation_bottom_sheet">Bottom Sheet 表示</string>
@@ -34,4 +35,6 @@
     <string name="text_color_1">textColor1</string>
     <string name="text_color_2">textColor2</string>
 
+    <!-- Recycle -->
+    <string name="explanation_recycle">Recyle View</string>
 </resources>

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.example.study.Presentation.BottomSheet.BottomSheetActivity;
 import com.example.study.Presentation.Connection.ConnectionActivity;
 import com.example.study.Presentation.Loading.LoadingActivity;
+import com.example.study.Presentation.Recicle.RecycleActivity;
 import com.example.study.Presentation.Text.TextActivity;
 import com.example.study.R;
 
@@ -44,6 +45,12 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Main
     @Override
     public void onClickText() {
         Intent intent = new Intent(MainActivity.this, TextActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onClickRecycle() {
+        Intent intent = new Intent(MainActivity.this, RecycleActivity.class);
         startActivity(intent);
     }
 }
