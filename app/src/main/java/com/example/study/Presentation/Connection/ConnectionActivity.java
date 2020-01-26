@@ -14,12 +14,16 @@ import com.example.study.R;
 
 public class ConnectionActivity extends ParentActivity implements ConnectionFragment.ConnectionFragmentListener {
 
+    private ConnectionFragment mFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connection_activity);
 
+        mFragment = new ConnectionFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.connection_fragment, mFragment);
         transaction.commit();
 
         super.setHeaderTextView(R.string.explanation_connection);
@@ -34,5 +38,9 @@ public class ConnectionActivity extends ParentActivity implements ConnectionFrag
             params.put(AsyncHttpRequest.PARAM_ZIP_CODE, zipInfo);
             new AsyncHttpRequest(this, AsyncHttpRequest.SEARCH_ZIP_URL, params).execute();
         }
+    }
+
+    public void showZipInfo (String zipInfoJson) {
+        mFragment.showZipInfo(zipInfoJson);
     }
 }

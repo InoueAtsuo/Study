@@ -36,5 +36,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/search_button" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="@string/zip_info" />
+            <TextView
+                android:id="@+id/zip_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
 </FrameLayout>

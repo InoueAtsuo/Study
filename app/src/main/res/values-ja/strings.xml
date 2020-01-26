@@ -19,6 +19,7 @@
     <!-- Connection -->
     <string name="explanation_connection">Http リクエスト送信</string>
     <string name="zip_code">郵便番号</string>
+    <string name="zip_info">郵便情報</string>
     <string name="search_button">検索</string>
     <string name="search_result">検索結果</string>
 
