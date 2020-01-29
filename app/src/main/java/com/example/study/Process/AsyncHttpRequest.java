@@ -19,9 +19,6 @@ public class AsyncHttpRequest extends AsyncTask<String, Void, String> {
     private String mUrl;
     private Map<String, String> mParams;
 
-    public static final String SEARCH_ZIP_URL = "http://zipcloud.ibsnet.co.jp/api/search";
-    public static final String PARAM_ZIP_CODE = "zipcode";
-
     public AsyncHttpRequest(Activity activity, String url, Map<String, String> params) {
         this.mActivity = activity;
         this.mUrl = url;

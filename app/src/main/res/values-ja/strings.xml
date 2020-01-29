@@ -37,4 +37,9 @@
 
     <!-- Recycle -->
     <string name="explanation_recycle">Recyle View</string>
+    <string name="text_family_name">姓</string>
+    <string name="text_first_name">名</string>
+    <string name="text_sex">性別</string>
+    <string name="text_man">男</string>
+    <string name="text_woman">女</string>
 </resources>

@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.example.study.Constant.Constant;
 import com.example.study.Presentation.Common.ParentActivity;
 import com.example.study.Process.AsyncHttpRequest;
 import com.example.study.R;
@@ -35,8 +36,8 @@ public class ConnectionActivity extends ParentActivity implements ConnectionFrag
         if (!TextUtils.isEmpty(str1) && !TextUtils.isEmpty(str2)) {
             String zipInfo = str1 + "-" + str2;
             Map<String, String> params = new HashMap<String, String>();
-            params.put(AsyncHttpRequest.PARAM_ZIP_CODE, zipInfo);
-            new AsyncHttpRequest(this, AsyncHttpRequest.SEARCH_ZIP_URL, params).execute();
+            params.put(Constant.PARAM_ZIP_CODE, zipInfo);
+            new AsyncHttpRequest(this, Constant.SEARCH_ZIP_URL, params).execute();
         }
     }
 
