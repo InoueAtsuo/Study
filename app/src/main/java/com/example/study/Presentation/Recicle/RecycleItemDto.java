@@ -1,6 +1,6 @@
 package com.example.study.Presentation.Recicle;
 
-import com.example.study.Constant.Kbn;
+import com.example.study.Common.Kbn;
 
 public class RecycleItemDto {
 
@@ -9,6 +9,8 @@ public class RecycleItemDto {
     private String firstName;
 
     private Kbn.SEX sex;
+
+    private String zipCode;
 
     public String getFamilyName() {
         return familyName;
@@ -32,5 +34,13 @@ public class RecycleItemDto {
 
     public void setSex(Kbn.SEX sex) {
         this.sex = sex;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 }

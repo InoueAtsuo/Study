@@ -1,4 +1,4 @@
-package com.example.study.Constant;
+package com.example.study.Common;
 
 public class Kbn {
 

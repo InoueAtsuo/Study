@@ -1,7 +1,6 @@
 package com.example.study.Presentation.Recicle;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.study.Constant.Kbn;
+import com.example.study.Common.Kbn;
 import com.example.study.Presentation.Common.ParentFragment;
 import com.example.study.R;
 

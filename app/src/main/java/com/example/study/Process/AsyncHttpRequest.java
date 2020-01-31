@@ -4,7 +4,12 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.AsyncTask;
 
+import com.example.study.Common.StringUtils;
 import com.example.study.Presentation.Connection.ConnectionActivity;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -68,9 +73,32 @@ public class AsyncHttpRequest extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String value) {
+
+        String zipInfoStr = "";
+        try {
+            JSONObject json = new JSONObject(value);
+            JSONArray results = json.getJSONArray("results");
+            if (results.length() > 0) {
+                if (results.getJSONObject(0).has("address1")) {
+                    zipInfoStr = zipInfoStr + results.getJSONObject(0).getString("address1");
+                }
+                if (results.getJSONObject(0).has("address2")) {
+                    zipInfoStr = zipInfoStr + results.getJSONObject(0).getString("address2");
+                }
+                if (results.getJSONObject(0).has("address3")) {
+                    zipInfoStr = zipInfoStr + results.getJSONObject(0).getString("address3");
+                }
+            }
+        } catch (JSONException e) {
+
+        }
+
+        if (StringUtils.isEmpty(zipInfoStr)) {
+            return;
+        }
         if (mActivity.getClass().equals(ConnectionActivity.class)) {
             ConnectionActivity connectionActivity = (ConnectionActivity) mActivity;
-            connectionActivity.showZipInfo(value);
+            connectionActivity.showZipInfo(zipInfoStr);
         }
     }
 }

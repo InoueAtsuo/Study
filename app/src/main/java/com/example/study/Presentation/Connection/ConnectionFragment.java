@@ -73,26 +73,7 @@ public class ConnectionFragment extends ParentFragment {
         });
     }
 
-    public void showZipInfo(String zipInfoJson) {
-        try {
-            JSONObject json = new JSONObject(zipInfoJson);
-            JSONArray results = json.getJSONArray("results");
-            String zipInfoStr = "";
-            if (results.length() > 0) {
-                if (results.getJSONObject(0).has("address1")) {
-                    zipInfoStr = zipInfoStr + results.getJSONObject(0).getString("address1");
-                }
-                if (results.getJSONObject(0).has("address2")) {
-                    zipInfoStr = zipInfoStr + results.getJSONObject(0).getString("address2");
-                }
-                if (results.getJSONObject(0).has("address3")) {
-                    zipInfoStr = zipInfoStr + results.getJSONObject(0).getString("address3");
-                }
-            }
-            zipInfo.setText(zipInfoStr);
-        }
-        catch (JSONException e) {
-
-        }
+    public void showZipInfo(String zipInfoStr) {
+        zipInfo.setText(zipInfoStr);
     }
 }

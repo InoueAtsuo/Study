@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.study.Constant.Kbn;
+import com.example.study.Common.Kbn;
 import com.example.study.R;
 
 import java.util.List;
@@ -32,12 +32,14 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         public TextView fmailyName;
         public TextView firstName;
         public TextView sex;
+        public TextView zipInfo;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             fmailyName = itemView.findViewById(R.id.family_name);
             firstName = itemView.findViewById(R.id.first_name);
             sex = itemView.findViewById(R.id.sex);
+            zipInfo = itemView.findViewById(R.id.zip_info);
         }
     }
 

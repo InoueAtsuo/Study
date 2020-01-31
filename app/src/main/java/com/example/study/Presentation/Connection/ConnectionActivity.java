@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.study.Constant.Constant;
+import com.example.study.Common.Constant;
 import com.example.study.Presentation.Common.ParentActivity;
 import com.example.study.Process.AsyncHttpRequest;
 import com.example.study.R;
@@ -41,7 +41,7 @@ public class ConnectionActivity extends ParentActivity implements ConnectionFrag
         }
     }
 
-    public void showZipInfo (String zipInfoJson) {
-        mFragment.showZipInfo(zipInfoJson);
+    public void showZipInfo (String zipInfoStr) {
+        mFragment.showZipInfo(zipInfoStr);
     }
 }
