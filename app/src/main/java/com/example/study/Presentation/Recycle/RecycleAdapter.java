@@ -1,4 +1,4 @@
-package com.example.study.Presentation.Recicle;
+package com.example.study.Presentation.Recycle;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,14 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.study.Common.Kbn;
 import com.example.study.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHolder> {
 
-    private List<RecycleItemDto> itemDtoList;
+    private List<RecycleItemDto> mItemDtoList;
 
-    public RecycleAdapter(List<RecycleItemDto> itemDtoList) {
-        this.itemDtoList = itemDtoList;
+    public RecycleAdapter() {
+        mItemDtoList = new ArrayList<>();
     }
 
     @NonNull
@@ -28,15 +29,23 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         return new ViewHolder(view);
     }
 
+    public void addUserInfo(List<RecycleItemDto> itemDtoList) {
+        for (RecycleItemDto itemDto : itemDtoList) {
+            mItemDtoList.add(itemDto);
+        }
+
+        notifyDataSetChanged();
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView fmailyName;
+        public TextView familyName;
         public TextView firstName;
         public TextView sex;
         public TextView zipInfo;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            fmailyName = itemView.findViewById(R.id.family_name);
+            familyName = itemView.findViewById(R.id.family_name);
             firstName = itemView.findViewById(R.id.first_name);
             sex = itemView.findViewById(R.id.sex);
             zipInfo = itemView.findViewById(R.id.zip_info);
@@ -45,8 +54,8 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        RecycleItemDto itemDto = itemDtoList.get(position);
-        holder.fmailyName.setText(itemDto.getFamilyName());
+        RecycleItemDto itemDto = mItemDtoList.get(position);
+        holder.familyName.setText(itemDto.getFamilyName());
         holder.firstName.setText(itemDto.getFirstName());
         if (itemDto.getSex() == Kbn.SEX.SEX_MAN) {
             holder.sex.setText(R.string.text_man);
@@ -57,13 +66,13 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        if (itemDtoList == null) {
+        if (mItemDtoList == null) {
             return 0;
         }
-        return itemDtoList.size();
+        return mItemDtoList.size();
     }
 
     public void addItem(RecycleItemDto itemDto) {
-        itemDtoList.add(itemDto);
+        mItemDtoList.add(itemDto);
     }
 }

@@ -14,7 +14,7 @@
 
     <fragment
         android:id="@+id/recycle_fragment"
-        android:name="com.example.study.Presentation.Recicle.RecycleFragment"
+        android:name="com.example.study.Presentation.Recycle.RecycleFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/recycle_header"

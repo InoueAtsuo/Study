@@ -9,7 +9,7 @@ import android.os.Bundle;
 import com.example.study.Presentation.BottomSheet.BottomSheetActivity;
 import com.example.study.Presentation.Connection.ConnectionActivity;
 import com.example.study.Presentation.Loading.LoadingActivity;
-import com.example.study.Presentation.Recicle.RecycleActivity;
+import com.example.study.Presentation.Recycle.RecycleActivity;
 import com.example.study.Presentation.Text.TextActivity;
 import com.example.study.R;
 

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.AsyncTask;
 
+import com.example.study.Common.Constant;
 import com.example.study.Common.StringUtils;
 import com.example.study.Presentation.Connection.ConnectionActivity;
 
@@ -16,18 +17,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Map;
 
-public class AsyncHttpRequest extends AsyncTask<String, Void, String> {
+public class SerchZipInfo extends AsyncTask<String, Void, String> {
 
     private Activity mActivity;
-    private String mUrl;
-    private Map<String, String> mParams;
+    private String mZipCode;
 
-    public AsyncHttpRequest(Activity activity, String url, Map<String, String> params) {
-        this.mActivity = activity;
-        this.mUrl = url;
-        this.mParams = params;
+    public SerchZipInfo(Activity activity, String zipCode) {
+        mActivity = activity;
+        mZipCode = zipCode;
     }
 
     @Override
@@ -36,12 +34,8 @@ public class AsyncHttpRequest extends AsyncTask<String, Void, String> {
         String value = null;
         try {
             Uri.Builder builder = new Uri.Builder();
-            if (mParams != null && !mParams.isEmpty()) {
-                for (String key : mParams.keySet()) {
-                    builder.appendQueryParameter(key, mParams.get(key));
-                }
-            }
-            URL url = new URL(mUrl + builder.toString());
+            builder.appendQueryParameter(Constant.PARAM_ZIP_CODE, mZipCode);
+            URL url = new URL(Constant.SEARCH_ZIP_URL + builder.toString());
             conn = (HttpURLConnection) url.openConnection();
 
             conn.setRequestMethod("GET");
@@ -97,8 +91,8 @@ public class AsyncHttpRequest extends AsyncTask<String, Void, String> {
             return;
         }
         if (mActivity.getClass().equals(ConnectionActivity.class)) {
-            ConnectionActivity connectionActivity = (ConnectionActivity) mActivity;
-            connectionActivity.showZipInfo(zipInfoStr);
+            ConnectionActivity activity = (ConnectionActivity) mActivity;
+            activity.showZipInfo(zipInfoStr);
         }
     }
 }

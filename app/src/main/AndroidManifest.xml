@@ -25,7 +25,7 @@
             android:name=".Presentation.Connection.ConnectionActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Presentation.Recicle.RecycleActivity"
+            android:name=".Presentation.Recycle.RecycleActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Presentation.Main.MainActivity"

@@ -1,4 +1,4 @@
-package com.example.study.Presentation.Recicle;
+package com.example.study.Presentation.Recycle;
 
 import com.example.study.Common.Kbn;
 
