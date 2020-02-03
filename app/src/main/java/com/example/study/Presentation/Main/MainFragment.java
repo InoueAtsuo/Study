@@ -20,6 +20,7 @@ public class MainFragment extends Fragment {
         void onClickLoading();
         void onClickText();
         void onClickRecycle();
+        void onClickImage();
     };
 
     private MainFragmentListener mListener;
@@ -42,6 +43,7 @@ public class MainFragment extends Fragment {
     private Button moveLoading;
     private Button moveText;
     private Button moveRecycle;
+    private Button moveImage;
 
     public static MainFragment newInstance() {
         return new MainFragment();
@@ -66,6 +68,7 @@ public class MainFragment extends Fragment {
         moveLoading = view.findViewById(R.id.move_loading);
         moveText = view.findViewById(R.id.move_text);
         moveRecycle = view.findViewById(R.id.move_recycle);
+        moveImage = view.findViewById(R.id.move_image);
 
         moveBottomSheet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +102,13 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mListener.onClickRecycle();
+            }
+        });
+
+        moveImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onClickImage();
             }
         });
     }

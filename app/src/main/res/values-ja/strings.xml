@@ -11,6 +11,7 @@
     <string name="move_loading">ロード中表示</string>
     <string name="move_text">テキスト表示</string>
     <string name="move_recycle">リサイクルビュー</string>
+    <string name="move_image">画像</string>
 
     <!-- BottomSheet -->
     <string name="explanation_bottom_sheet">Bottom Sheet 表示</string>
@@ -42,4 +43,7 @@
     <string name="text_sex">性別</string>
     <string name="text_man">男</string>
     <string name="text_woman">女</string>
+
+    <!-- Image -->
+    <string name="explanation_image">Image View</string>
 </resources>
