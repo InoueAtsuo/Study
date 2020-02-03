@@ -5,22 +5,22 @@
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/loading_header"
+        android:id="@+id/image_header"
         layout="@layout/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
 
     <fragment
-        android:id="@+id/loading_fragment"
-        android:name="com.example.study.Presentation.Loading.LoadingFragment"
+        android:id="@+id/image_fragment"
+        android:name="com.example.study.Presentation.Image.ImageFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loading_header"
-        android:layout_above="@+id/loading_footer" />
+        android:layout_below="@+id/image_header"
+        android:layout_above="@+id/image_footer" />
 
     <include
-        android:id="@+id/loading_footer"
+        android:id="@+id/image_footer"
         layout="@layout/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
