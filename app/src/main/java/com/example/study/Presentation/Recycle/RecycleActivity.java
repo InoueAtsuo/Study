@@ -36,4 +36,9 @@ public class RecycleActivity extends ParentActivity implements RecycleFragment.R
         mFragment.addUserInfo(itemDtoList);
         mNum = mNum + itemDtoList.size();
     }
+
+    @Override
+    public void searchMoreUser() {
+        new SearchUserInfo(this, mNum).execute();
+    }
 }

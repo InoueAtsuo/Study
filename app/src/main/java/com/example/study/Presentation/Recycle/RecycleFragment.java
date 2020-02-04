@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,9 +23,10 @@ public class RecycleFragment extends ParentFragment {
 
     private RecyclerView mRecyclerView = null;
     private RecycleAdapter mAdapter = null;
+    private boolean mLoading = false;
 
     public interface RecycleFragmentListener {
-
+        void searchMoreUser();
     };
 
     private RecycleFragmentListener mListener = null;
@@ -67,9 +69,28 @@ public class RecycleFragment extends ParentFragment {
 
         mAdapter = new RecycleAdapter();
         mRecyclerView.setAdapter(mAdapter);
+
+        // スクロール判定
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                // 一番下まで来た際の判定
+                if (!recyclerView.canScrollVertically(1)) {
+                    if (!mLoading) {
+                        mLoading = true;
+
+                        // 追加でユーザ情報を検索
+                        mListener.searchMoreUser();
+                    }
+                }
+            }
+        });
     }
 
     public void addUserInfo(List<RecycleItemDto> itemDtoList) {
         mAdapter.addUserInfo(itemDtoList);
+        mLoading = false;
     }
 }

@@ -71,8 +71,4 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         }
         return mItemDtoList.size();
     }
-
-    public void addItem(RecycleItemDto itemDto) {
-        mItemDtoList.add(itemDto);
-    }
 }

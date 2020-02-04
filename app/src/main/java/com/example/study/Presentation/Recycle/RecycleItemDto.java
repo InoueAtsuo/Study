@@ -4,6 +4,21 @@ import com.example.study.Common.Kbn;
 
 public class RecycleItemDto {
 
+//    public enum ItemType{
+//        UserInfo,
+//        Loading
+//    }
+//
+//    private ItemType itemType;
+//
+//    public ItemType getItemType() {
+//        return itemType;
+//    }
+//
+//    public RecycleItemDto(ItemType itemType) {
+//        this.itemType = itemType;
+//    }
+
     private String familyName;
 
     private String firstName;
