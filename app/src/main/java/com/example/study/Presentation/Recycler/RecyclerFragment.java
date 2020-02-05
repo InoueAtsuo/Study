@@ -78,6 +78,9 @@ public class RecyclerFragment extends ParentFragment {
                     if (!mLoading) {
                         mLoading = true;
 
+                        // Loadingを表示
+                        mAdapter.addLoading();
+
                         // 追加でユーザ情報を検索
                         mListener.searchMoreUser();
                     }
@@ -87,7 +90,15 @@ public class RecyclerFragment extends ParentFragment {
     }
 
     public void addUserInfo(List<UserItemDto> itemDtoList) {
-        mAdapter.addUserInfo(itemDtoList);
+
+        // Loadingを削除
+        mAdapter.removeLoading();
+
+        if (itemDtoList != null && !itemDtoList.isEmpty()) {
+            // ユーザ情報を表示
+            mAdapter.addUserInfo(itemDtoList);
+        }
+
         mLoading = false;
     }
 }

@@ -12,6 +12,7 @@ import com.example.study.Common.Kbn;
 import com.example.study.R;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -33,7 +34,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             View view = inflater.inflate(R.layout.recycler_item, parent, false);
             return new UserDataViewHolder(view);
         } else {
-            View view = inflater.inflate(R.layout.recycler_item, parent, false);
+            View view = inflater.inflate(R.layout.recycler_loading, parent, false);
             return new LoadingViewHolder(view);
         }
     }
@@ -42,6 +43,25 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         for (UserItemDto useritemDto : userItemDtoList) {
             UserData userData = new UserData(VIEWTYPE_USER_INFO, useritemDto);
             mRecylerItemDataList.add(userData);
+        }
+
+        notifyDataSetChanged();
+    }
+
+    public void addLoading() {
+        LoadingData loadingData = new LoadingData(VIEWTYPE_LOADING);
+        mRecylerItemDataList.add(loadingData);
+
+        notifyDataSetChanged();
+    }
+
+    public void removeLoading() {
+        Iterator<RecylerItemData> i = mRecylerItemDataList.iterator();
+        while (i.hasNext()) {
+            RecylerItemData itemData = i.next();
+            if (itemData.viewType == VIEWTYPE_LOADING){
+                i.remove();
+            }
         }
 
         notifyDataSetChanged();
@@ -105,7 +125,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public class RecylerItemData {
-        public int viewType = 0;
+        public int viewType;
 
         RecylerItemData(int viewType) {
             this.viewType = viewType;
@@ -167,5 +187,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    // sample http://www.fineblue206.net/20190604192949
+    public class LoadingData extends RecylerItemData {
+
+        LoadingData(int viewType) {
+            super(viewType);
+        }
+    }
 }

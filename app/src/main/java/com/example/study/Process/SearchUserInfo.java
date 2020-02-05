@@ -22,6 +22,12 @@ public class SearchUserInfo extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+
+        }
+
         return String.valueOf(mNum);
     }
 

@@ -29,16 +29,19 @@ public class RecyclerActivity extends ParentActivity implements RecyclerFragment
         super.setHeaderTextView(R.string.explanation_recycle);
         super.setButtonReturnView();
 
+        // ユーザ情報初期検索
         new SearchUserInfo(this, mNum).execute();
-    }
-
-    public void addUserInfo(List<UserItemDto> itemDtoList) {
-        mFragment.addUserInfo(itemDtoList);
-        mNum = mNum + itemDtoList.size();
     }
 
     @Override
     public void searchMoreUser() {
+        // ユーザ情報検索
         new SearchUserInfo(this, mNum).execute();
+    }
+
+    // ユーザ情報追加
+    public void addUserInfo(List<UserItemDto> itemDtoList) {
+        mFragment.addUserInfo(itemDtoList);
+        mNum = mNum + itemDtoList.size();
     }
 }
