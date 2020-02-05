@@ -10,7 +10,7 @@ import com.example.study.Presentation.BottomSheet.BottomSheetActivity;
 import com.example.study.Presentation.Connection.ConnectionActivity;
 import com.example.study.Presentation.Image.ImageActivity;
 import com.example.study.Presentation.Loading.LoadingActivity;
-import com.example.study.Presentation.Recycle.RecycleActivity;
+import com.example.study.Presentation.Recycler.RecyclerActivity;
 import com.example.study.Presentation.Text.TextActivity;
 import com.example.study.R;
 
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Main
 
     @Override
     public void onClickRecycle() {
-        Intent intent = new Intent(MainActivity.this, RecycleActivity.class);
+        Intent intent = new Intent(MainActivity.this, RecyclerActivity.class);
         startActivity(intent);
     }
 

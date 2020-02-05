@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.os.AsyncTask;
 
 import com.example.study.Common.Kbn;
-import com.example.study.Presentation.Recycle.RecycleActivity;
-import com.example.study.Presentation.Recycle.RecycleItemDto;
+import com.example.study.Presentation.Recycler.RecyclerActivity;
+import com.example.study.Presentation.Recycler.UserItemDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +30,11 @@ public class SearchUserInfo extends AsyncTask<String, Void, String> {
 
         int num = Integer.valueOf(value);
 
-        List<RecycleItemDto> itemDtoList = new ArrayList<>();
+        List<UserItemDto> itemDtoList = new ArrayList<>();
 
         if (num < 30) {
             for (int i = 0; i < 10; i++) {
-                RecycleItemDto itemDto = new RecycleItemDto();
+                UserItemDto itemDto = new UserItemDto();
                 String str = String.valueOf(num);
                 itemDto.setFamilyName("a" + str);
                 itemDto.setFirstName("b" + str);
@@ -48,8 +48,8 @@ public class SearchUserInfo extends AsyncTask<String, Void, String> {
             }
         }
 
-        if (mActivity.getClass().equals(RecycleActivity.class)) {
-            RecycleActivity activity = (RecycleActivity) mActivity;
+        if (mActivity.getClass().equals(RecyclerActivity.class)) {
+            RecyclerActivity activity = (RecyclerActivity) mActivity;
             activity.addUserInfo(itemDtoList);
         }
     }
