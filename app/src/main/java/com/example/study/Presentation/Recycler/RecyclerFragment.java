@@ -59,6 +59,8 @@ public class RecyclerFragment extends ParentFragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         mRecyclerView = view.findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
@@ -87,6 +89,16 @@ public class RecyclerFragment extends ParentFragment {
                 }
             }
         });
+
+        if (!mLoading) {
+            mLoading = true;
+
+            // Loadingを表示
+            mAdapter.addLoading();
+
+            // ユーザ情報初期検索
+            mListener.searchMoreUser();
+        }
     }
 
     public void addUserInfo(List<UserItemDto> itemDtoList) {

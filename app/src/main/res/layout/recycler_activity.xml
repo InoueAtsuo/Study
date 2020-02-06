@@ -12,9 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
 
-    <fragment
+    <FrameLayout
         android:id="@+id/recycle_fragment"
-        android:name="com.example.study.Presentation.Recycler.RecyclerFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/recycle_header"

@@ -21,16 +21,13 @@ public class RecyclerActivity extends ParentActivity implements RecyclerFragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_activity);
 
-        mFragment = new RecyclerFragment();
+        mFragment = RecyclerFragment.newInstance();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.recycle_fragment, mFragment);
+        transaction.replace(R.id.recycle_fragment, mFragment);
         transaction.commit();
 
         super.setHeaderTextView(R.string.explanation_recycle);
         super.setButtonReturnView();
-
-        // ユーザ情報初期検索
-        new SearchUserInfo(this, mNum).execute();
     }
 
     @Override
