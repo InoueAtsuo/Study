@@ -11,9 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
 
-    <fragment
+    <FrameLayout
         android:id="@+id/image_fragment"
-        android:name="com.example.study.Presentation.Image.ImageFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/image_header"

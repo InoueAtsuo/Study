@@ -12,6 +12,8 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 public class BottomSheetActivity extends ParentActivity implements BottomSheetFragment.BottomSheetFragmentFragmentListener {
 
+    private BottomSheetFragment mFragment;
+
     private View bottomSheetActivityView;
     private LinearLayout bottomSheet;
     private BottomSheetBehavior behavior;
@@ -21,7 +23,9 @@ public class BottomSheetActivity extends ParentActivity implements BottomSheetFr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bottom_sheet_activity);
 
+        mFragment = BottomSheetFragment.newInstance();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.bottom_sheet_fragment, mFragment);
         transaction.commit();
 
         super.setHeaderTextView(R.string.explanation_bottom_sheet);

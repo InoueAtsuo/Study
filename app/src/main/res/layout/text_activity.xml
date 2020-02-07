@@ -6,22 +6,21 @@
     android:orientation="vertical">
 
     <include
-        android:id="@+id/loading_header"
+        android:id="@+id/text_header"
         layout="@layout/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
 
-    <fragment
-        android:id="@+id/loading_fragment"
-        android:name="com.example.study.Presentation.Text.TextFragment"
+    <FrameLayout
+        android:id="@+id/text_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loading_header"
-        android:layout_above="@+id/loading_footer" />
+        android:layout_below="@+id/text_header"
+        android:layout_above="@+id/text_footer" />
 
     <include
-        android:id="@+id/loading_footer"
+        android:id="@+id/text_footer"
         layout="@layout/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

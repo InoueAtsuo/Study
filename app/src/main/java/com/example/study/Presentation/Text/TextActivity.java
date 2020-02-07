@@ -9,12 +9,16 @@ import com.example.study.R;
 
 public class TextActivity extends ParentActivity implements TextFragment.TextFragmentListener {
 
+    private TextFragment mFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.text_activity);
 
+        mFragment = TextFragment.newInstance();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.text_fragment, mFragment);
         transaction.commit();
 
         super.setHeaderTextView(R.string.explanation_text);

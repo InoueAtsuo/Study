@@ -12,9 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
 
-    <fragment
+    <FrameLayout
         android:id="@+id/connection_fragment"
-        android:name="com.example.study.Presentation.Connection.ConnectionFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/connection_header"

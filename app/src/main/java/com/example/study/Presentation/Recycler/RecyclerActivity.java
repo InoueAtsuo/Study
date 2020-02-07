@@ -23,7 +23,7 @@ public class RecyclerActivity extends ParentActivity implements RecyclerFragment
 
         mFragment = RecyclerFragment.newInstance();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.recycle_fragment, mFragment);
+        transaction.add(R.id.recycle_fragment, mFragment);
         transaction.commit();
 
         super.setHeaderTextView(R.string.explanation_recycle);
