@@ -6,4 +6,7 @@ public class Constant {
 
     // リクエストパラメータ
     public static final String PARAM_ZIP_CODE = "zipcode";
+
+    // リザルトコード：カメラ
+    public static final int RESULT_CAMERA = 1001;
 }

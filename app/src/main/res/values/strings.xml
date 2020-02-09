@@ -47,4 +47,5 @@
 
     <!-- Image -->
     <string name="explanation_image">Image View</string>
+    <string name="camera_button">Camera</string>
 </resources>
