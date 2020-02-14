@@ -63,6 +63,8 @@ public class ConnectionFragment extends ParentFragment {
         zipCode2 = view.findViewById(R.id.zip_code2);
         searchButton = view.findViewById(R.id.search_button);
         zipInfo = view.findViewById(R.id.zip_info);
+
+        // 検索ボタン押下時の処理
         searchButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

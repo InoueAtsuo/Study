@@ -31,10 +31,13 @@ public class ConnectionActivity extends ParentActivity implements ConnectionFrag
     public void searchZipCode(String str1, String str2) {
         if (!TextUtils.isEmpty(str1) && !TextUtils.isEmpty(str2)) {
             String zipCode = str1 + "-" + str2;
-            new SerchZipInfo(this, zipCode).execute();
+
+            // 郵便番号検索を非同期で呼び出し
+          new SerchZipInfo(this, zipCode).execute();
         }
     }
 
+    // 郵便番号非同期検索のレスポンス受け取り後の処理
     public void showZipInfo (String zipInfoStr) {
         mFragment.showZipInfo(zipInfoStr);
     }

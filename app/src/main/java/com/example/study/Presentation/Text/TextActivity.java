@@ -7,6 +7,16 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.study.Presentation.Common.ParentActivity;
 import com.example.study.R;
 
+/**
+ * TextActibity
+ *   多言語対応でのテキスト表示
+ *
+ * ポイント
+ *   以下のディレクトリにそれぞれstrings.xmlを配置
+ *     src/main/res/values-ja
+ *     src/main/res/values
+ *   Android端末の言語に応じて、テキスト表示が切り変わる
+ */
 public class TextActivity extends ParentActivity implements TextFragment.TextFragmentListener {
 
     private TextFragment mFragment;

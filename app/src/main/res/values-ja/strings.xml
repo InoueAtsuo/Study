@@ -30,6 +30,13 @@
 
     <!-- Text -->
     <string name="explanation_text">Text 表示</string>
+
+    <string name="language_text">多言語対応</string>
+    <string name="language">日本語</string>
+
+    <string name="param_text">可変文字</string>
+    <string name="param">%1$s : %2$d</string>
+
     <plurals name="plural_book">
         <item quantity="other">%d冊</item>
     </plurals>
