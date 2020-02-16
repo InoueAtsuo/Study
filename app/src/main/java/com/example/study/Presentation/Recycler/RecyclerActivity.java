@@ -10,6 +10,15 @@ import java.util.List;
 
 import androidx.fragment.app.FragmentTransaction;
 
+/**
+ * RecyclerActivity
+ *   リストデータを画面表示するRecyclerViewの説明
+ *
+ *   履歴一覧、SNSでの会話一覧などアプリで一覧表示することは多くあります。
+ *   Android端末は画像サイズの問題から、1画面中に全データ表示できないことも多いです。
+ *   その際にRecyclerViewを利用すれば、表示可能になります。
+ *   少し癖が強いですが、非常に重要な機能です。
+ */
 public class RecyclerActivity extends ParentActivity implements RecyclerFragment.RecycleFragmentListener {
 
     private RecyclerFragment mFragment;

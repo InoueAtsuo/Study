@@ -11,11 +11,12 @@ import com.example.study.R;
  * TextActibity
  *   多言語対応でのテキスト表示
  *
- * ポイント
+ *   Androidは多言語対応がされており、Android端末の言語に応じて、テキスト表示が切り変わります。
+ *   アプリを海外展開する場合などに必須です。
+ *
  *   以下のディレクトリにそれぞれstrings.xmlを配置
  *     src/main/res/values-ja
  *     src/main/res/values
- *   Android端末の言語に応じて、テキスト表示が切り変わる
  */
 public class TextActivity extends ParentActivity implements TextFragment.TextFragmentListener {
 

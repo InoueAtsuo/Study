@@ -16,6 +16,10 @@ import com.example.study.R;
 
 import java.util.List;
 
+/**
+ * RecyclerFragment
+ *   リストデータを画面表示するRecyclerViewの説明
+ */
 public class RecyclerFragment extends ParentFragment {
 
     private RecyclerView mRecyclerView = null;
@@ -63,9 +67,12 @@ public class RecyclerFragment extends ParentFragment {
 
         mRecyclerView = view.findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        // リサイクル表示時に枠線を追加
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
         mRecyclerView.addItemDecoration(itemDecoration);
 
+        // リサイクル表示するAdapterを指定
         mAdapter = new RecyclerAdapter();
         mRecyclerView.setAdapter(mAdapter);
 
@@ -77,23 +84,27 @@ public class RecyclerFragment extends ParentFragment {
 
                 // 一番下まで来た際の判定
                 if (!recyclerView.canScrollVertically(1)) {
-                    if (!mLoading) {
-                        mLoading = true;
-
-                        // Loadingを表示
-                        mAdapter.addLoading();
-
-                        // 追加でユーザ情報を検索
-                        mListener.searchMoreUser();
-                    }
+                    // 追加データ検索
+                    searchUser();
                 }
             }
         });
 
+        // 初期データ検索
+        searchUser();
+    }
+
+    /**
+     * データ検索
+     */
+    private void searchUser() {
+        // ロード中は、追加検索をしない
         if (!mLoading) {
+
+            // ロード中をtrueに設定
             mLoading = true;
 
-            // Loadingを表示
+            // Loading表示を追加
             mAdapter.addLoading();
 
             // ユーザ情報初期検索
@@ -101,9 +112,14 @@ public class RecyclerFragment extends ParentFragment {
         }
     }
 
+    /**
+     * 追加情報表示
+     *
+     * @param itemDtoList
+     */
     public void addUserInfo(List<UserItemDto> itemDtoList) {
 
-        // Loadingを削除
+        // Loading表示を削除
         mAdapter.removeLoading();
 
         if (itemDtoList != null && !itemDtoList.isEmpty()) {
@@ -111,6 +127,7 @@ public class RecyclerFragment extends ParentFragment {
             mAdapter.addUserInfo(itemDtoList);
         }
 
+        // ロード中をfalseに設定
         mLoading = false;
     }
 }

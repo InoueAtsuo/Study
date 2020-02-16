@@ -10,6 +10,13 @@ import com.example.study.Presentation.Common.ParentActivity;
 import com.example.study.R;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
+/**
+ * BottomSheetActivity
+ *   ボトムシートの表示
+ *
+ *   Androidではボトムシートが標準に備わっています。
+ *   それの表示などを説明します。
+ */
 public class BottomSheetActivity extends ParentActivity implements BottomSheetFragment.BottomSheetFragmentFragmentListener {
 
     private BottomSheetFragment mFragment;
@@ -37,12 +44,14 @@ public class BottomSheetActivity extends ParentActivity implements BottomSheetFr
         bottomSheetActivityView = findViewById(R.id.bottom_sheet_activity);
 
         // 初期状態は非表示
+        //   setStateで状態を変化させられます。
         behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
     }
 
     // 画面サイズはonCreateでは取得できないので、onWindowFocusChangedで取得
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
+        // setPeekHeightでボトムシートの標準の高さを指定します。
         // ボトムシートの高さを画面サイズの2/5に設定
         int displayHeight = bottomSheetActivityView.getHeight();
         int bottomSheetHeight = displayHeight * 2 / 5;

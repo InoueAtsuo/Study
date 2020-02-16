@@ -13,6 +13,10 @@ import android.widget.Button;
 import com.example.study.Presentation.Common.ParentFragment;
 import com.example.study.R;
 
+/**
+ * BottomSheetFragment
+ *   ボトムシートの表示
+ */
 public class BottomSheetFragment extends ParentFragment {
 
     public interface BottomSheetFragmentFragmentListener {
@@ -57,6 +61,7 @@ public class BottomSheetFragment extends ParentFragment {
         showBottomSheetButton = view.findViewById(R.id.show_bottom_sheet_button);
         hideBottomSheetButton = view.findViewById(R.id.hide_bottom_sheet_button);
 
+        // ボトムシート表示のクリック処理
         showBottomSheetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +69,7 @@ public class BottomSheetFragment extends ParentFragment {
             }
         });
 
+        // ボトムシート非表示のクリック処理
         hideBottomSheetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

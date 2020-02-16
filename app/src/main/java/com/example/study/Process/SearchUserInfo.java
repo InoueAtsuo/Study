@@ -38,6 +38,7 @@ public class SearchUserInfo extends AsyncTask<String, Void, String> {
 
         List<UserItemDto> itemDtoList = new ArrayList<>();
 
+        // 本来ならHttp通信でユーザ情報取得だが、テストデータを追加
         if (num < 30) {
             for (int i = 0; i < 10; i++) {
                 UserItemDto itemDto = new UserItemDto();

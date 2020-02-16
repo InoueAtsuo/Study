@@ -53,5 +53,9 @@
 
     <!-- Image -->
     <string name="explanation_image">Image View</string>
+    <string name="image_text1">Image画像をxml上でid指定</string>
+    <string name="image_text2">Image画像をsetImageResourceでid指定</string>
+    <string name="image_text3">Base64文字列を画像変換して表示</string>
+    <string name="image_text4">カメラ撮影された画像を表示</string>
     <string name="camera_button">カメラ</string>
 </resources>

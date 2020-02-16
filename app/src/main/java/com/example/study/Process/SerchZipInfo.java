@@ -18,6 +18,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Http通信での郵便番号検索
+ *   スマホアプリのHttp通信では、レスポンスにjsonデータが来ます。
+ *   リクエスト送信してレスポンスjsonを解析します。
+ *
+ *   通常ならAPIサーバにHttp通信を行いますが、
+ *   ここではフリーで公開されている郵便番号検索のリクエストで確認します。
+ */
 public class SerchZipInfo extends AsyncTask<String, Void, String> {
 
     private Activity mActivity;
@@ -28,8 +36,17 @@ public class SerchZipInfo extends AsyncTask<String, Void, String> {
         mZipCode = zipCode;
     }
 
+    /**
+     * 非同期処理
+     *
+     * @param params パラメータ
+     * @return 検索結果
+     */
     @Override
     protected String doInBackground(String... params) {
+
+        // ここではHttpURLConnectionを持いてリクエスト送信をします。
+        // ほかにも方法はありますが、今回はこれで行きます。
         HttpURLConnection conn = null;
         String value = null;
         try {
@@ -65,11 +82,17 @@ public class SerchZipInfo extends AsyncTask<String, Void, String> {
         return value;
     }
 
+    /**
+     * 非同期連携の終了後の処理
+     *
+     * @param value レスポンスのjson文字列
+     */
     @Override
     protected void onPostExecute(String value) {
 
         String zipInfoStr = "";
         try {
+            // JSONObjectを利用して、jsonから郵便番号の住所情報を取得
             JSONObject json = new JSONObject(value);
             JSONArray results = json.getJSONArray("results");
             if (results.length() > 0) {
@@ -90,6 +113,8 @@ public class SerchZipInfo extends AsyncTask<String, Void, String> {
         if (StringUtils.isEmpty(zipInfoStr)) {
             return;
         }
+
+        // Activityの郵便番号住所情報表示を呼び出し
         if (mActivity.getClass().equals(ConnectionActivity.class)) {
             ConnectionActivity activity = (ConnectionActivity) mActivity;
             activity.showZipInfo(zipInfoStr);

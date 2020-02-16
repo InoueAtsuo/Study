@@ -54,5 +54,9 @@
 
     <!-- Image -->
     <string name="explanation_image">Image View</string>
+    <string name="image_text1">Specify image file id in xml</string>
+    <string name="image_text2">Specify image file id in setImageResource</string>
+    <string name="image_text3">Convert and display Base64 character strings</string>
+    <string name="image_text4">Displays images captured by the camera</string>
     <string name="camera_button">Camera</string>
 </resources>

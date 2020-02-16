@@ -3,12 +3,19 @@ package com.example.study.Presentation.Connection;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 
 import com.example.study.Presentation.Common.ParentActivity;
 import com.example.study.Process.SerchZipInfo;
 import com.example.study.R;
 
+/**
+ * ConnectionActivity
+ *   Http通信
+ *   非同期連携
+ *
+ *   業務用アプリではHttp通信での処理は必須です。
+ *   Http通信は非同期連携で実施する必要があります。
+ */
 public class ConnectionActivity extends ParentActivity implements ConnectionFragment.ConnectionFragmentListener {
 
     private ConnectionFragment mFragment;
@@ -27,17 +34,22 @@ public class ConnectionActivity extends ParentActivity implements ConnectionFrag
         super.setButtonReturnView();
     }
 
+    /**
+     * 郵便番号検索
+     *
+     * @param zipCode 郵便番号
+     */
     @Override
-    public void searchZipCode(String str1, String str2) {
-        if (!TextUtils.isEmpty(str1) && !TextUtils.isEmpty(str2)) {
-            String zipCode = str1 + "-" + str2;
-
-            // 郵便番号検索を非同期で呼び出し
-          new SerchZipInfo(this, zipCode).execute();
-        }
+    public void searchZipCode(String zipCode) {
+        // 郵便番号検索を非同期で呼び出し
+        new SerchZipInfo(this, zipCode).execute();
     }
 
-    // 郵便番号非同期検索のレスポンス受け取り後の処理
+    /**
+     * 郵便番号住所情報表示
+     *
+     * @param zipInfoStr 郵便番号住所情報
+     */
     public void showZipInfo (String zipInfoStr) {
         mFragment.showZipInfo(zipInfoStr);
     }

@@ -100,6 +100,7 @@ public class TextFragment extends ParentFragment {
 
         // textの一部をSpannableStringBuilderで文字色変換
         //   この方法は文字色だけでなく、文字の大きさなどスタイルを自由に設定可能です。
+        //   ワード検索してヒットした個所の色を変えるなどに利用します。
         String text2 = getResources().getString(R.string.text_color_2);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text2);
         spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.RED), 4, 9, 0);

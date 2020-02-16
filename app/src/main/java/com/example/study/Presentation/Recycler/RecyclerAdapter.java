@@ -15,11 +15,22 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * RecyclerAdapter
+ *
+ * RecyclerViewの中心となるクラスです。
+ * 必ずRecyclerView.Adapterをextendします。
+ *
+ * 通常RecyclerViewに表示するのは1種類ですが、
+ * 今回はユーザ情報とLoading情報の2種類です。
+ */
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final int VIEWTYPE_USER_INFO = 0;
     private final int VIEWTYPE_LOADING = 1;
 
+    // リサイクルアイテムデータ一覧
+    //   ここに追加されたデータが、リサイクルデータとして表示されます。
     private List<RecylerItemData> mRecylerItemDataList;
 
     public RecyclerAdapter() {
@@ -30,24 +41,41 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        if (viewType == VIEWTYPE_USER_INFO) {
-            View view = inflater.inflate(R.layout.recycler_item, parent, false);
-            return new UserDataViewHolder(view);
-        } else {
-            View view = inflater.inflate(R.layout.recycler_loading, parent, false);
-            return new LoadingViewHolder(view);
+
+        // viewTypeによって、ViewHolderの種類を変えます
+        switch (viewType) {
+            case VIEWTYPE_USER_INFO:
+                View userView = inflater.inflate(R.layout.recycler_item, parent, false);
+                return new UserDataViewHolder(userView);
+            case VIEWTYPE_LOADING:
+                View loadingView = inflater.inflate(R.layout.recycler_loading, parent, false);
+                return new LoadingViewHolder(loadingView);
+            default:
+                return null;
         }
     }
 
+    /**
+     * ユーザ情報追加
+     *   ユーザ情報をリサイクルアイテムデータ一覧に追加します。
+     *
+     * @param userItemDtoList ユーザ情報リスト
+     */
     public void addUserInfo(List<UserItemDto> userItemDtoList) {
         for (UserItemDto useritemDto : userItemDtoList) {
             UserData userData = new UserData(VIEWTYPE_USER_INFO, useritemDto);
             mRecylerItemDataList.add(userData);
         }
 
+        // notifyDataSetChangedを実行すると、リサイクルアイテムデータ一覧の内容が画面に表示されます。
+        // 今回はデータ件数が少ないのでnotifyDataSetChangedで全データ表示を反映させています。
+        // ほかにもnotifyItemChanged(int), notifyItemRemoved()など特定の表示箇所のみを反映させる方法もあります。
         notifyDataSetChanged();
     }
 
+    /**
+     * Loading情報追加
+     */
     public void addLoading() {
         LoadingData loadingData = new LoadingData(VIEWTYPE_LOADING);
         mRecylerItemDataList.add(loadingData);
@@ -55,6 +83,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         notifyDataSetChanged();
     }
 
+    /**
+     * Loading情報削除
+     */
     public void removeLoading() {
         Iterator<RecylerItemData> i = mRecylerItemDataList.iterator();
         while (i.hasNext()) {
@@ -84,10 +115,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 break;
             case VIEWTYPE_LOADING:
                 break;
-
         }
     }
 
+    /**
+     * リサイクルデータ数取得
+     *   リサイクル表示するデータ数を戻します。
+     *   この関数は必須です。
+     *
+     * @return リサイクルデータ数
+     */
     @Override
     public int getItemCount() {
         if (mRecylerItemDataList == null) {
@@ -101,6 +138,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return mRecylerItemDataList.get(position).viewType;
     }
 
+    /**
+     * ユーザデータのViewHolder
+     */
     public class UserDataViewHolder extends RecyclerView.ViewHolder {
         private TextView familyName;
         private TextView firstName;
@@ -117,6 +157,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    /**
+     * LoadingデータのViewHolder
+     */
     public class LoadingViewHolder extends RecyclerView.ViewHolder {
 
         public LoadingViewHolder(@NonNull View itemView) {
@@ -124,6 +167,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    /**
+     * リサイクル表示するアイテムデータ
+     *
+     * viewTypeで種類を判定するようにします。
+     */
     public class RecylerItemData {
         public int viewType;
 
@@ -132,6 +180,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    /**
+     * ユーザデータ
+     */
     public class UserData extends RecylerItemData {
 
         UserData(int viewType) {
@@ -187,6 +238,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    /**
+     * Loadingデータ
+     */
     public class LoadingData extends RecylerItemData {
 
         LoadingData(int viewType) {
