@@ -22,4 +22,17 @@
         <item name="android:textSize">@dimen/title_text_size</item>
     </style>
 
+    <style name="description_style">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">@dimen/explanation_text_size</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="contents_style">
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">0dp</item>
+    </style>
 </resources>

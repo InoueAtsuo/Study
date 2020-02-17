@@ -37,10 +37,13 @@
     <string name="param_text">Variable characters</string>
     <string name="param">%1$s : %2$d</string>
 
+    <string name="plural_text">Plural form</string>
     <plurals name="plural_book">
         <item quantity="one">%d book</item>
         <item quantity="other">%d books</item>
     </plurals>
+
+    <string name="color_text">Change some text styles</string>
     <string name="text_color_1">textColor1</string>
     <string name="text_color_2">textColor2</string>
 

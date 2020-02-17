@@ -12,46 +12,67 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/description_style"
             android:text="@string/language_text"/>
 
         <TextView
             android:id="@+id/language_text"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            style="@style/contents_style"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/description_style"
             android:text="@string/param_text"/>
 
         <TextView
             android:id="@+id/param_text"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            style="@style/contents_style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/description_style"
+            android:text="@string/plural_text"/>
 
         <TextView
             android:id="@+id/book_zero"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            style="@style/contents_style" />
 
         <TextView
             android:id="@+id/book_one"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            style="@style/contents_style" />
 
         <TextView
             android:id="@+id/book_other"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            style="@style/contents_style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/description_style"
+            android:text="@string/color_text"/>
 
         <TextView
             android:id="@+id/text_color_1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            style="@style/contents_style" />
 
         <TextView
             android:id="@+id/text_color_2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            style="@style/contents_style" />
     </LinearLayout>
 </FrameLayout>
