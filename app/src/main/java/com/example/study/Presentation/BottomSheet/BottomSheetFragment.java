@@ -20,11 +20,13 @@ import com.example.study.R;
 public class BottomSheetFragment extends ParentFragment {
 
     public interface BottomSheetFragmentFragmentListener {
+        void expandBottomSheet();
         void showBottomSheet();
         void hideBottomSheet();
     };
 
     private BottomSheetFragmentFragmentListener mListener = null;
+    private Button expandBottomSheetButton;
     private Button showBottomSheetButton;
     private Button hideBottomSheetButton;
 
@@ -58,8 +60,17 @@ public class BottomSheetFragment extends ParentFragment {
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        expandBottomSheetButton = view.findViewById(R.id.expand_bottom_sheet_button);
         showBottomSheetButton = view.findViewById(R.id.show_bottom_sheet_button);
         hideBottomSheetButton = view.findViewById(R.id.hide_bottom_sheet_button);
+
+        // ボトムシート全表示のクリック処理
+        expandBottomSheetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.expandBottomSheet();
+            }
+        });
 
         // ボトムシート表示のクリック処理
         showBottomSheetButton.setOnClickListener(new View.OnClickListener() {

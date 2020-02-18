@@ -15,8 +15,10 @@
 
     <!-- BottomSheet -->
     <string name="explanation_bottom_sheet">Bottom Sheet 表示</string>
+    <string name="expand_bottom_sheet_button">Bottom Sheet 全表示</string>
     <string name="show_bottom_sheet_button">Bottom Sheet 表示</string>
     <string name="hide_bottom_sheet_button">Bottom Sheet 非表示</string>
+    <string name="bottom_sheet_text">Bottom Sheet テキスト</string>
 
     <!-- Connection -->
     <string name="explanation_connection">Http リクエスト送信</string>

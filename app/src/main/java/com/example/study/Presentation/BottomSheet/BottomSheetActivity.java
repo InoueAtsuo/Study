@@ -4,6 +4,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.study.Presentation.Common.ParentActivity;
@@ -24,6 +25,7 @@ public class BottomSheetActivity extends ParentActivity implements BottomSheetFr
     private View bottomSheetActivityView;
     private LinearLayout bottomSheet;
     private BottomSheetBehavior behavior;
+    private Button bottomSheetButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,14 @@ public class BottomSheetActivity extends ParentActivity implements BottomSheetFr
         behavior = BottomSheetBehavior.from(bottomSheet);
         bottomSheetActivityView = findViewById(R.id.bottom_sheet_activity);
 
+        bottomSheetButton = findViewById(R.id.bottom_sheet_button);
+        bottomSheetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hideBottomSheet();
+            }
+        });
+
         // 初期状態は非表示
         //   setStateで状態を変化させられます。
         behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
@@ -56,6 +66,12 @@ public class BottomSheetActivity extends ParentActivity implements BottomSheetFr
         int displayHeight = bottomSheetActivityView.getHeight();
         int bottomSheetHeight = displayHeight * 2 / 5;
         behavior.setPeekHeight(bottomSheetHeight);
+    }
+
+    @Override
+    public void expandBottomSheet() {
+        // ボトムシートを全表示
+        behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
     }
 
     @Override

@@ -42,10 +42,23 @@
         app:behavior_hideable="true" >
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="30dp"
-            android:text="BottomSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/bottom_sheet_text"
             android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/bottom_sheet_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/hide_bottom_sheet_button" />
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

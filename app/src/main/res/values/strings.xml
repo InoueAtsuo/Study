@@ -15,8 +15,10 @@
 
     <!-- BottomSheet -->
     <string name="explanation_bottom_sheet">Show Bottom Sheet</string>
+    <string name="expand_bottom_sheet_button">Expand Bottom Sheet</string>
     <string name="show_bottom_sheet_button">Show Bottom Sheet</string>
     <string name="hide_bottom_sheet_button">Hide Bottom Sheet</string>
+    <string name="bottom_sheet_text">Bottom Sheet Text</string>
 
     <!-- Connection -->
     <string name="explanation_connection">Send Http Request</string>
