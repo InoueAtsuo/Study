@@ -36,29 +36,43 @@
         android:id="@+id/bottom_sheet"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@android:color/white"
         app:layout_behavior="@string/bottom_sheet_behavior"
-        app:behavior_hideable="true" >
+        android:orientation="vertical"
+        app:behavior_hideable="true"
+        android:background="@drawable/bottom_sheet" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="0dp"
-            android:text="@string/bottom_sheet_text"
-            android:textSize="30sp" />
+        <View
+            android:id="@+id/bottom_sheet_top"
+            android:layout_width="96dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bottom_sheet_top" />
 
-        <Button
-            android:id="@+id/bottom_sheet_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="0dp"
-            android:text="@string/hide_bottom_sheet_button" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="0dp"
+                android:text="@string/bottom_sheet_text"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/bottom_sheet_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="0dp"
+                android:text="@string/hide_bottom_sheet_button" />
+        </LinearLayout>
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
