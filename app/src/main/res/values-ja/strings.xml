@@ -27,9 +27,6 @@
     <string name="search_button">検索</string>
     <string name="search_result">検索結果</string>
 
-    <!-- Loading -->
-    <string name="explanation_loading">Loading 表示</string>
-
     <!-- Text -->
     <string name="explanation_text">Text 表示</string>
 

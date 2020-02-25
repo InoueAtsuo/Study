@@ -20,13 +20,6 @@
     </Button>
 
     <Button
-        android:id="@+id/move_loading"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="@string/move_loading">
-    </Button>
-
-    <Button
         android:id="@+id/move_text"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"

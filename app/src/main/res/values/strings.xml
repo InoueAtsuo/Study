@@ -27,9 +27,6 @@
     <string name="search_button">Search</string>
     <string name="search_result">Search Result</string>
 
-    <!-- Loading -->
-    <string name="explanation_loading">Show Loading</string>
-
     <!-- Text -->
     <string name="explanation_text">Show Text</string>
 

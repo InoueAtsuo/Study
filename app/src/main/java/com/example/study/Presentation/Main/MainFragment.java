@@ -17,7 +17,6 @@ public class MainFragment extends Fragment {
     public interface MainFragmentListener {
         void onClickBottomSheet();
         void onClickConnection();
-        void onClickLoading();
         void onClickText();
         void onClickRecycle();
         void onClickImage();
@@ -40,7 +39,6 @@ public class MainFragment extends Fragment {
 
     private Button moveBottomSheet;
     private Button moveConnection;
-    private Button moveLoading;
     private Button moveText;
     private Button moveRecycle;
     private Button moveImage;
@@ -65,7 +63,6 @@ public class MainFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         moveBottomSheet = view.findViewById(R.id.move_bottom_sheet);
         moveConnection = view.findViewById(R.id.move_connection);
-        moveLoading = view.findViewById(R.id.move_loading);
         moveText = view.findViewById(R.id.move_text);
         moveRecycle = view.findViewById(R.id.move_recycle);
         moveImage = view.findViewById(R.id.move_image);
@@ -81,13 +78,6 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mListener.onClickConnection();
-            }
-        });
-
-        moveLoading.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mListener.onClickLoading();
             }
         });
 
